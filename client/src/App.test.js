@@ -1,9 +1,23 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import App from './App';
+import React from "react";
+import { render } from "@testing-library/react";
+import App from "./App";
+import PlayerList from "./components/PlayerList";
 
-it('renders without crashing', () => {
-  const div = document.createElement('div');
-  ReactDOM.render(<App />, div);
-  ReactDOM.unmountComponentAtNode(div);
+test("renders without crashing", () => {
+  render(<App />);
+});
+
+test("header displays properly", () => {
+  const { getByText } = render(<App />);
+  const header = getByText(/Soccar/i);
+});
+
+test("player list renders", () => {
+  render(<PlayerList />);
+});
+
+test("players have their own div", () => {
+  const { findAllByRole } = render(<PlayerList />);
+  const playerDivs = findAllByRole("div");
+  return playerDivs;
 });
