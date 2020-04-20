@@ -10,7 +10,6 @@ class PlayerList extends React.Component {
     };
   }
   componentDidMount() {
-    console.log("mounted");
     axios
       .get("http://localhost:5000/api/players")
       .then(res => {

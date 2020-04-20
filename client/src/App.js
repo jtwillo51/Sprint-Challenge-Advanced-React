@@ -14,7 +14,7 @@ function App() {
   return (
     <div className="App">
       <div className="header">
-        <h1>Soccar Player list</h1>
+        <h1>Soccer Player List</h1>
         <div className="dark-mode__toggle">
           <div
             onClick={toggleMode}
